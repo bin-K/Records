@@ -7,8 +7,8 @@ const WXBizDataCrypt = require('../../common/WXBizDataCrypt')
 router.post('/getWeChatInfoPersonal', async (ctx) => {
   const result = await axios.get('https://api.weixin.qq.com/sns/jscode2session', {
     params: {
-      appid: 'wx789bea7eb89091e5', //个人appid
-      secret: '30d20dbf8b9bc3a685d9d27a40a754f0',// 个人secret
+      appid: '', //个人appid
+      secret: '',// 个人secret
       js_code: ctx.request.body.code,
       grant_type: 'authorization_code'
     }
@@ -29,8 +29,8 @@ router.post('/cryptoData', async (ctx) => {
 router.post('/getPhoneNumber', async (ctx) => {
   const tokenRes = await axios.get('https://api.weixin.qq.com/cgi-bin/token', {
     params: {
-      appid: 'wx83b8cde7a00bf5e1',// 云设计预见家appid
-      secret: 'bcde53905cb8ea43c85b638d92933a6d', // 云设计预见家secret
+      appid: '',// 云设计预见家appid
+      secret: '', // 云设计预见家secret
       grant_type: 'client_credential'
     }
   })
