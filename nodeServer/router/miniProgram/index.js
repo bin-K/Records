@@ -7,8 +7,8 @@ const WXBizDataCrypt = require('../../common/WXBizDataCrypt')
 router.post('/getWeChatInfoPersonal', async (ctx) => {
   const result = await axios.get('https://api.weixin.qq.com/sns/jscode2session', {
     params: {
-      appid: '', //个人appid
-      secret: '',// 个人secret
+      appid: '', 
+      secret: '',
       js_code: ctx.request.body.code,
       grant_type: 'authorization_code'
     }
@@ -19,7 +19,7 @@ router.post('/getWeChatInfoPersonal', async (ctx) => {
 // 解密微信数据，微信获取手机号旧接口
 router.post('/cryptoData', async (ctx) => {
   const { sessionKey, encryptedData, iv } = ctx.request.body
-  const pc = new WXBizDataCrypt('wx789bea7eb89091e5', sessionKey)
+  const pc = new WXBizDataCrypt('', sessionKey)
   const data = pc.decryptData(encryptedData, iv)
   console.log('解密后 data: ', data)
   ctx.body = data
@@ -29,8 +29,8 @@ router.post('/cryptoData', async (ctx) => {
 router.post('/getPhoneNumber', async (ctx) => {
   const tokenRes = await axios.get('https://api.weixin.qq.com/cgi-bin/token', {
     params: {
-      appid: '',// 云设计预见家appid
-      secret: '', // 云设计预见家secret
+      appid: '',
+      secret: '',
       grant_type: 'client_credential'
     }
   })
@@ -46,7 +46,7 @@ router.post('/getPhoneNumber', async (ctx) => {
 // 调用地图API，逆解码经纬度
 // 此处调用的是百度API
 router.post('/parseLoaction', async (ctx) => {
-  const ak = 'WeNqlda3sVoW4O6mBW6t3up0xrC9Nz7p'
+  const ak = ''
   const { latitude, longitude } = ctx.request.body
   const location = await axios.get(`
   https://api.map.baidu.com/geoconv/v1/?coords=${latitude},${longitude}&from=1&to=5&ak=${ak}`)
@@ -65,8 +65,8 @@ router.post('/parseLoaction', async (ctx) => {
 router.post('/getCode', async (ctx) => {
   const tokenRes = await axios.get('https://api.weixin.qq.com/cgi-bin/token', {
     params: {
-      appid: 'wx83b8cde7a00bf5e1',// 云设计预见家appid
-      secret: 'bcde53905cb8ea43c85b638d92933a6d', // 云设计预见家secret
+      appid: '',
+      secret: '', 
       grant_type: 'client_credential'
     }
   })
