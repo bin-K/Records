@@ -21,7 +21,7 @@ const leaveTimes = [] as any; // 离开时间数组
 // 进入页面开始计时
 let startTime: Date | null = new Date();
 // 记录上一个元素
-let preElement = null
+let preElement: any = null
 let isEnter = false
 // 最后一次滚动动卷去的距离，用于判断下一次滑动是上滑还是下滑
 // let lastScrollPositionTop = scrollContainer.scrollTop
@@ -29,7 +29,7 @@ let isEnter = false
 const list = [] as any
 
 
-const judgeEnterCenter = (clientHeight, element, index) => {
+const judgeEnterCenter = (clientHeight: number, element: any, index: number) => {
   const rect = element.getBoundingClientRect();
   const elementTop = rect.top; // 元素顶部相对于顶部的距离
   const elementBottom = rect.bottom; // 元素底部相对于顶部的距离
@@ -66,8 +66,8 @@ const judgeEnterCenter = (clientHeight, element, index) => {
         console.log(
           `停留时间：${leaveTimes[index] - enterTimes[index]} `
         );
-        if (list.find((item) => item.type === element.dataset.type)) {
-          list[list.findIndex((item) => item.type === element.dataset.type)].totalTime += leaveTimes[index] - enterTimes[index]
+        if (list.find((item: any) => item.type === element.dataset.type)) {
+          list[list.findIndex((item: any) => item.type === element.dataset.type)].totalTime += leaveTimes[index] - enterTimes[index]
         } else {
           list.push({
             type: element.dataset.type,

@@ -1,6 +1,6 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter, RouteRecordRaw } from 'vue-router'
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: '/recordModules'
@@ -9,6 +9,11 @@ const routes = [
     path: '/recordModules',
     name: 'RecordModules',
     component: () => import('../views/RecordModule.vue')
+  },
+  {
+    path: '/surround',
+    name: 'Surround',
+    component: () => import('../views/Surround.vue')
   }
 ]
 
