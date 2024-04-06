@@ -5,5 +5,8 @@
 <script setup lang="ts">
 </script>
 
-<style scoped>
+<style>
+#app {
+  width: 100%;
+}
 </style>

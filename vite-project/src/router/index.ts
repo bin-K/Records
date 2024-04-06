@@ -14,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/surround',
     name: 'Surround',
     component: () => import('../views/Surround.vue')
+  },
+  {
+    path: '/element-test',
+    name: 'ElementTest',
+    component: () => import('../views/ElementTest.vue')
   }
 ]
 
