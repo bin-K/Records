@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "element-plus": "^2.6.3",
+    "ued-plus": "^1.0.8",
     "vue": "^3.2.45",
     "vue-router": "^4.3.0"
   },

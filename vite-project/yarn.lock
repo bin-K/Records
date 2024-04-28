@@ -769,6 +769,11 @@ typescript@^4.9.3:
   resolved "https://registry.npmmirror.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
+ued-plus@^1.0.8:
+  version "1.0.8"
+  resolved "http://localhost:8081/repository/npm-hosted/ued-plus/-/ued-plus-1.0.8.tgz#18ba9fbd9c66235601821c1fba8d6c36a42b9301"
+  integrity sha512-4Tlgbvb6YOn1qi/j83e/AUqytA/2LmdvcFQOux099k1FxPr1YL1dOP3obsrrFXU3xpADdJNFbczvRd8p4KmE5A==
+
 vite@^5.2.8:
   version "5.2.8"
   resolved "https://registry.npmmirror.com/vite/-/vite-5.2.8.tgz#a99e09939f1a502992381395ce93efa40a2844aa"
