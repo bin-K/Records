@@ -1,29 +1,20 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
-  {
+    {
     path: '/',
-    redirect: '/recordModules'
+    name: 'Index',
+    component: () => import('../views/index.vue')
   },
   {
-    path: '/recordModules',
+    path: '/record-module',
     name: 'RecordModules',
-    component: () => import('../views/RecordModule.vue')
-  },
-  {
-    path: '/surround',
-    name: 'Surround',
-    component: () => import('../views/Surround.vue')
-  },
-  {
-    path: '/element-test',
-    name: 'ElementTest',
-    component: () => import('../views/ElementTest.vue')
+    component: () => import('../components/record-module/index.vue')
   },
    {
-    path: '/ued-test',
-    name: 'UedTest',
-    component: () => import('../views/UedTest.vue')
+    path: '/ued-plus-test',
+    name: 'UedPlusTest',
+    component: () => import('../components/ued-plus/test.vue')
   }
 ]
 

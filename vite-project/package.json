@@ -9,8 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "element-plus": "^2.6.3",
-    "ued-plus": "^1.0.8",
+    "@ued/ued-plus": "^1.0.13",
     "vue": "^3.2.45",
     "vue-router": "^4.3.0"
   },
