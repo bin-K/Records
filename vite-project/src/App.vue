@@ -1,12 +1,7 @@
 <template>
-  <router-view/>
+	<router-view />
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
-<style>
-#app {
-  width: 100%;
-}
-</style>
+<style></style>
