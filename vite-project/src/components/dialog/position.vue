@@ -25,7 +25,7 @@ const mousedown = (e: MouseEvent) => {
 	const downX = e.clientX
 	const downY = e.clientY
 
-	const targetRect = dialogHeaderRef.value!.getBoundingClientRect()
+	const targetRect = dialogRef.value!.getBoundingClientRect()
 	const targetLeft = targetRect.left
 	const targetTop = targetRect.top
 	const targetWidth = targetRect.width
@@ -34,27 +34,26 @@ const mousedown = (e: MouseEvent) => {
 	const clientWidth = document.documentElement.clientWidth
 	const clientHeight = document.documentElement.clientHeight
 
+	// https://developer.mozilla.org/zh-CN/docs/Web/API/DOMMatrix 注意兼容性问题
+	const matrix = new WebKitCSSMatrix(
+		getComputedStyle(dialogRef.value!).transform
+	)
+
 	const mousemove = (e: MouseEvent) => {
-		let moveX = e.clientX - downX
-		let moveY = e.clientY - downY
+		const moveX = e.clientX - downX
+		const moveY = e.clientY - downY
+
+		let top = targetTop + moveY
+		let left = targetLeft + moveX
+
+		if (!overflow.value) {
+			top = Math.min(Math.max(top, 0), clientHeight - targetHeight)
+			left = Math.min(Math.max(left, 0), clientWidth - targetWidth)
+		}
 
 		if (dialogRef.value) {
-			dialogRef.value.style.top = `${targetTop + moveY}px`
-			dialogRef.value.style.left = `${targetLeft + moveX}px`
-			if (!overflow.value) {
-				if (targetLeft + moveX < 0) {
-					dialogRef.value.style.left = `0px`
-				}
-				if (targetLeft + targetWidth + moveX > clientWidth) {
-					dialogRef.value.style.left = `${clientWidth - targetWidth}px`
-				}
-				if (targetTop + moveY < 0) {
-					dialogRef.value.style.top = `0px`
-				}
-				if (targetTop + targetHeight + moveY > clientHeight) {
-					dialogRef.value.style.top = `${clientHeight - targetHeight}px`
-				}
-			}
+			dialogRef.value.style.top = `${top - matrix.m42}px`
+			dialogRef.value.style.left = `${left - matrix.m41}px`
 		}
 	}
 
@@ -101,7 +100,7 @@ onBeforeUnmount(() => {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	/* transform: translate(-50%, -50%); */
+	transform: translate(-50%, -50%);
 	width: 50%;
 	background-color: #fff;
 	border-radius: 4px;
