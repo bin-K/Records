@@ -26,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'DialogPosition',
 		component: () => import('../components/dialog/position.vue'),
 	},
+	{
+		path: '/css',
+		name: 'Css',
+		component: () => import('../components/css/index.vue'),
+	},
 ]
 
 export default createRouter({
