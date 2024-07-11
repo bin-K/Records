@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ued/ued-plus": "^1.0.15",
+    "mathjs": "^13.0.2",
     "vue": "^3.2.45",
     "vue-router": "^4.3.0"
   },

@@ -31,6 +31,16 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'Css',
 		component: () => import('../components/css/index.vue'),
 	},
+	{
+		path: '/web-worker',
+		name: 'WebWorker',
+		component: () => import('../components/web-worker/index.vue'),
+	},
+	{
+		path: '/web-worker-canvas',
+		name: 'WebWorkerCanvas',
+		component: () => import('../components/web-worker/canvas.vue'),
+	},
 ]
 
 export default createRouter({

@@ -26,5 +26,17 @@ const routerLink = [
 		name: '拖拽弹窗-position',
 		link: '/dialog-position',
 	},
+	{
+		name: '动态引入CSS',
+		link: '/css',
+	},
+	{
+		name: 'web-worker计算',
+		link: '/web-worker',
+	},
+	{
+		name: 'web-worker绘图',
+		link: '/web-worker-canvas',
+	},
 ]
 </script>
